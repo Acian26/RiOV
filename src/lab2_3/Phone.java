@@ -24,6 +24,10 @@ public class Phone {
         System.out.println("Звонит " + callerName + " номер: " + number);
     }
 
+//    public void receiveCall(String callerName, int number) {
+//        System.out.println("Звонит " + callerName + " номер: " + number);
+//    }
+
     public void sendMessage(String... numbers) {
         System.out.println("Кому отправить сообщения:");
         for (String number : numbers)
