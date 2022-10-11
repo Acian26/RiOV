@@ -1,5 +1,6 @@
 package lab4;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,27 +33,24 @@ public class lab4 {
 
         //Реализовать проверку, являются ли две строки анаграммами
         System.out.println("Task 3");
-        String str1 = "silent";
-        String str2 = "listen";
+        String str1 = "road";
+        String str2 = "йцук";
         System.out.println("Введенное слово 1: "+str1+" "+"Введенное слово 2: "+str2);
-        if (str1.length() != str2.length()) {
-            System.out.println("Строки не анаграммы");
-        }
-        else {
-            StringBuilder s1 = new StringBuilder(str1.toLowerCase());
-            StringBuilder s2 = new StringBuilder(str2.toLowerCase());
-            int x, y;
-            x = -1;
-            while (++x < s1.length()) {
-                y = -1;
-                while (++y < s2.length()) {
-                    if (s1.charAt(x) == s2.charAt(y)) {
-                        s2.deleteCharAt(y);
-                    }
-                    }
-                }
-        System.out.println("Строки анаграммы");
+        int a = str1.length();
+        int b = str2.length();
+        if (a == b) {
+            char[] a1 = str1.toCharArray();
+            char[] a2 = str2.toCharArray();
+            Arrays.sort(a1);
+            Arrays.sort(a2);
+            if (Arrays.equals(a1, a2)) {
+                System.out.println("true");
+            } else {
+                System.out.println("false");
             }
+        } else {
+            System.out.println("false");
+        }
         System.out.println("----------");
 
         //Напишите Java-программу для лексикографического сравнения двух строк
